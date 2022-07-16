@@ -21,9 +21,13 @@ class Employee extends User {
     ) {
         super(firstName, lastName);
     }
+
+    describe(): string {
+        return super.describe() + `. I'm a ${this.jobTitle}.`;
+    }
 }
 
-let employee = new Employee('John', 'Doe', 'Web Develope');
+let employee = new Employee('John', 'Doe', 'Web Developer');
 
 console.log(employee.getFullName());
 console.log(employee.describe());

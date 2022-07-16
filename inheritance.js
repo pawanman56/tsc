@@ -35,8 +35,11 @@ var Employee = /** @class */ (function (_super) {
         _this.jobTitle = jobTitle;
         return _this;
     }
+    Employee.prototype.describe = function () {
+        return _super.prototype.describe.call(this) + ". I'm a ".concat(this.jobTitle, ".");
+    };
     return Employee;
 }(User));
-var employee = new Employee('John', 'Doe', 'Web Develope');
+var employee = new Employee('John', 'Doe', 'Web Developer');
 console.log(employee.getFullName());
 console.log(employee.describe());
