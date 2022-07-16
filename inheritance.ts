@@ -13,8 +13,9 @@ class User {
     }
 }
 
-class Employee extends User {
-    constructor(
+// class Employee extends User {
+class Employee {
+    /*constructor(
         firstName: string,
         lastName: string,
         private jobTitle: string
@@ -24,10 +25,23 @@ class Employee extends User {
 
     describe(): string {
         return super.describe() + `. I'm a ${this.jobTitle}.`;
+    }*/
+
+    public static headCount: number = 0;
+
+    constructor(
+        private firstName: string,
+        private lastName: string,
+        private jobTitle: string
+    ) {
+        Employee.headCount++;
     }
 }
 
-let employee = new Employee('John', 'Doe', 'Web Developer');
+let john = new Employee('John', 'Doe', 'Web Developer');
+let jane = new Employee('Jane', 'Doe', 'Web Developer');
 
-console.log(employee.getFullName());
-console.log(employee.describe());
+// console.log(employee.getFullName());
+// console.log(employee.describe());
+
+console.log(Employee.headCount);
