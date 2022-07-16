@@ -19,6 +19,6 @@ class Person {
 }
 
 let person = new Person();
-person.age = 1000;
+person.age = 10;
 
 console.log(person.age);
