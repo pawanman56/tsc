@@ -18,3 +18,17 @@ let numArry = [1, 5, 7, 13];
 let randomElm = getRandomElement<number>(numArry);
 
 console.log(randomElm);
+
+function merge<A, B>(obj1: A, obj2: B) {
+    return {
+        ...obj1,
+        ...obj2
+    }
+}
+
+let res = merge(
+    { name: 'John Doe' },
+    { position: 'Web Developer' }
+);
+
+console.log(res);
