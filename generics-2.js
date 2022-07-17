@@ -14,3 +14,8 @@ function merge(obj1, obj2) {
 }
 var result = merge({ name: 'John Doe' }, { age: 25 });
 console.log(result);
+function props(obj, key) {
+    return obj[key];
+}
+var str = props({ name: 'John Doe' }, 'name');
+console.log(str);

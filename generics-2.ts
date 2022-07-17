@@ -11,3 +11,10 @@ let result = merge(
 );
 
 console.log(result);
+
+function props<C, D extends keyof C>(obj: C, key: D) {
+    return obj[key];
+}
+
+let str = props({ name: 'John Doe'}, 'name');
+console.log(str);
