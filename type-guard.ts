@@ -31,11 +31,18 @@ type BusinessContact = NewCustomer | Supplier;
 function signContract(contact: BusinessContact): string {
     let message: string;
 
-    if (contact instanceof NewCustomer) {
+    /*if (contact instanceof NewCustomer) {
         message = contact.isCreditAllowed() ? 'Sign a new contract' : 'Credit Issue';
     }
 
     if (contact instanceof Supplier) {
+        message = contact.isInShortList() ? 'Sign a new contract' : 'Supply Issue';
+    }*/
+
+    if ('isCreditAllowed' in contact) {
+        message = contact.isCreditAllowed() ? 'Sign a new contract' : 'Credit Issue';
+
+    } else {
         message = contact.isInShortList() ? 'Sign a new contract' : 'Supply Issue';
     }
 
