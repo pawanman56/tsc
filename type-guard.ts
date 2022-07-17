@@ -28,6 +28,10 @@ class Supplier {
 
 type BusinessContact = NewCustomer | Supplier;
 
+function isCustomer(contact: any): contact is NewCustomer {
+    return contact instanceof NewCustomer;
+}
+
 function signContract(contact: BusinessContact): string {
     let message: string;
 
@@ -39,7 +43,7 @@ function signContract(contact: BusinessContact): string {
         message = contact.isInShortList() ? 'Sign a new contract' : 'Supply Issue';
     }*/
 
-    if ('isCreditAllowed' in contact) {
+    if (isCustomer(contact)) {
         message = contact.isCreditAllowed() ? 'Sign a new contract' : 'Credit Issue';
 
     } else {

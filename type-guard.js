@@ -24,6 +24,9 @@ var Supplier = /** @class */ (function () {
     };
     return Supplier;
 }());
+function isCustomer(contact) {
+    return contact instanceof NewCustomer;
+}
 function signContract(contact) {
     var message;
     /*if (contact instanceof NewCustomer) {
@@ -33,7 +36,7 @@ function signContract(contact) {
     if (contact instanceof Supplier) {
         message = contact.isInShortList() ? 'Sign a new contract' : 'Supply Issue';
     }*/
-    if ('isCreditAllowed' in contact) {
+    if (isCustomer(contact)) {
         message = contact.isCreditAllowed() ? 'Sign a new contract' : 'Credit Issue';
     }
     else {
